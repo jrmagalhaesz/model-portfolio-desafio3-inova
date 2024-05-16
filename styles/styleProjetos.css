@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@100..900&display=swap');
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #22d4fd;
+    --cor-hover: #272727;
+
+    --font-primaria: "Krona One", sans-serif;
+    --font-secundaria: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.header {
+    padding: 2% 0 0;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    position: relative;
+}
+
+.header__menu__link {
+    font-family: var(--font-secundaria);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    position: relative;
+}
+
+.header__menu__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; 
+    height: 2px;
+    background-color: var(--cor-secundaria);
+    transition: width 0.3s ease; 
+  }
+  
+  .header__menu__link:hover::after {
+    width: 100%; 
+  }
+
+  .header__menu__link.active::after {
+    width: 100%; 
+  }
+
+.main {
+    padding: 6% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.main__conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.main__conteudo__titulo {
+    font-size: 2.25rem;
+    font-family: var(--font-primaria);
+}
+
+.strong {
+    color: var(--cor-terciaria);
+}
+
+.main__conteudo__paragrafo {
+    font-size: 1.5rem;
+    font-family: var(--font-secundaria);
+}
+
+.main__projetos {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 30px;
+}
+
+.projetos {
+    width: 33%;
+    height: 200px;
+    overflow: hidden; 
+    position: relative; 
+    box-shadow: 0 10px 20px var(--cor-terciaria); 
+}
+
+.myGit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: relative; 
+    z-index: 1; 
+}
+
+.rodape {
+    color: var(--cor-secundaria);
+    border-top: 2px solid var(--cor-terciaria);
+    text-align: center;
+    padding: 20px;
+    font-family: var(--font-secundaria);
+    font-size: 1rem;
+}
+
+.logoAluraInclude {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 10%;
+    }
+    
+    .header__menu {
+        justify-content: center;
+        gap: 5%;
+    }
+
+    .main {
+        flex-direction: column-reverse;
+        padding: 5%;
+        align-items: center;
+    }
+
+    .main__conteudo {
+        width: auto;
+    }
+    
+}
